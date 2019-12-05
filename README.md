@@ -2,10 +2,6 @@
 
 **HK-Docs** is an application build with visual studio. It's a CRUD Application of Documents. Users can add/update/view or delete their documents.
 
-## Developed by ##
-
-    Het Kansara - Web Development - Humber College (N01330009)
-
 ## How to configure the project? ##
 
 1. Clone Git Repository - Using GIT CLI
@@ -65,3 +61,7 @@ Get sample database .sql file from `Database` folder
    3. Icons used from: https://fontawesome.com/
    4. Text editor plugin for editing document: https://github.com/webfashionist/RichText
    5. Other Libraries: Bootstrap(https://getbootstrap.com/) & Jquery(https://jquery.com/)
+
+## Developed by ##
+
+    Het Kansara - Web Development - Humber College (N01330009)
