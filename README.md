@@ -13,9 +13,9 @@
     * `git clone https://github.com/hetkansara/Web-Dev-Bootcamp.git`
 2. Navigate to project directory - `Web-Dev-Bootcamp`
 3. Open project with [`Visual Studio`](https://visualstudio.microsoft.com/downloads/)
-4. Configure your mysql database credentials in `DOCS.cs`
-    ### DOCS ###
-    ![DOCS.cs](https://i.ibb.co/5jdkLJb/Screenshot-63.png)
+4. Configure your mysql database credentials in `DOCSDB.cs`
+    ### DOCSDB ###
+    ![DOCSDB.cs](https://i.ibb.co/5jdkLJb/Screenshot-63.png)
 
 ## Wireframes ##
    ### Documents Listing
