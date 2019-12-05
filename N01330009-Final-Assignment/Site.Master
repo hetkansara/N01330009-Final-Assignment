@@ -13,7 +13,10 @@
     </asp:PlaceHolder>
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
-   <link href="https://fonts.googleapis.com/css?family=Muli|Solway&display=swap" rel="stylesheet">
+    <%-- Fonts used from: https://fonts.google.com/--%>
+    <%-- Icons used from: https://fontawesome.com/--%>
+    <%-- Text editor plugin for editing document content: https://github.com/webfashionist/RichText --%>
+    <link href="https://fonts.googleapis.com/css?family=Muli|Solway&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/Content/richtext.min.css" />
     <link rel="stylesheet" type="text/css" href="/Content/style.css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />

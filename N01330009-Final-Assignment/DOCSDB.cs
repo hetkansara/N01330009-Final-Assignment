@@ -31,30 +31,14 @@ namespace N01330009_Final_Assignment
         }
 
         // This function is as it was in the SCHOOLDB.cs (No Changes) - Het Kansara
-        //returns a result set
-        //is a list dictionaries
-        //a dictionary is like a list but with Key:Value pairs
-        //they are also known as "associative arrays"
+        // returns a result set
+        // is a list dictionaries
+        // a dictionary is like a list but with Key:Value pairs
+        // they are also known as "associative arrays"
         public List<Dictionary<String,String>> List_Query(string query)
         {
             MySqlConnection Connect = new MySqlConnection(ConnectionString);
-
-            // INPUT -> (string) SELECT QUERY 
-            // e.g. "select * from students";
-            // OUTPUT -> (List<Dictionary<String,String>>) RESULT SET 
-            // e.g. 
-            //[
-            //  {"STUDENTFNAME":"SARAH","STUDENTLNAME":"Valdez","STUDENTNUMBER":"N1678","ENROLMENTDATE":"2018-06-18"},
-            //  {"STUDENTFNAME":"Jennifer","STUDENTLNAME":"FAULKNER","STUDENTNUMBER":"N1679","ENROLMENTDATE":"2018-08-02"},
-            //  {"STUDENTFNAME":"Austin","STUDENTLNAME":"Simon","STUDENTNUMBER":"N1682","ENROLMENTDATE":"2018-06-14"},
-            //  ...
-            //] 
             List<Dictionary<String, String>> ResultSet = new List<Dictionary<String, String>>();
-
-            // try{} catch{} will attempt to do everything inside try{}
-            // if an error happens inside try{}, then catch{} will execute instead.
-            // very useful for debugging without the whole program crashing!
-            // this can be easily abused and should be used sparingly.
             try
             {
                 Debug.WriteLine("Connection Initialized...");
@@ -66,7 +50,6 @@ namespace N01330009_Final_Assignment
                 //grab the result set
                 MySqlDataReader resultset = cmd.ExecuteReader();
 
-                
                 //for every row in the result set
                 while (resultset.Read())
                 {
@@ -97,6 +80,7 @@ namespace N01330009_Final_Assignment
             return ResultSet;
         }
 
+        // Find Document in database using document id
         public Document FindDocument(int id)
         {
             MySqlConnection Connect = new MySqlConnection(ConnectionString);
@@ -139,7 +123,7 @@ namespace N01330009_Final_Assignment
                     documents.Add(currentDocument);
                 }
 
-                result_document = documents[0]; //get the first student
+                result_document = documents[0]; //get the first document
 
             }
             catch (Exception ex)
@@ -156,11 +140,11 @@ namespace N01330009_Final_Assignment
 
 
 
-        // add page into database
+        // add/edit page into database
         public void AddEditDocument(Document new_document, int documentID)
         {
-            Console.WriteLine("AScas");
             string query;
+            // if we want to add record in database, we will pass documentID = 0, otherwise documentID = 1
             if (documentID == 0)
             {
                 query = "INSERT INTO pages(page_id, page_title, page_body) VALUES (NULL,'{0}','{1}')";
@@ -168,7 +152,7 @@ namespace N01330009_Final_Assignment
             } 
             else
             {
-                query = "update pages set page_title='{0}', page_body='{1}' where page_id={2}";
+                query = "UPDATE pages set page_title='{0}', page_body='{1}' where page_id={2}";
                 query = String.Format(query, new_document.GetDocumentTitle(), new_document.GetDocumentBody(), documentID);
             }
 
@@ -191,21 +175,17 @@ namespace N01330009_Final_Assignment
             Connect.Close();
         }
 
-
+        // Delete document using documentID
         public void DeleteDocument(int document_id)
         {
-            //DELETING ON THE PRIMARY KEY OF STUDENTS
             string query = "delete from pages where page_id = {0}";
             query = String.Format(query, document_id);
 
             MySqlConnection Connect = new MySqlConnection(ConnectionString);
-            //This command removes the particular student from the table
             MySqlCommand cmd_removedocument = new MySqlCommand(query, Connect);
             try
             {
-                //try to execute both commands!
                 Connect.Open();
-                //then delete the main record
                 cmd_removedocument.ExecuteNonQuery();
                 Debug.WriteLine("Executed query " + cmd_removedocument);
             }
