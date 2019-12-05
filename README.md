@@ -10,8 +10,8 @@
 
 1. Clone Git Repository - Using GIT CLI
     * Open Terminal
-    * `git clone https://github.com/hetkansara/Web-Dev-Bootcamp.git`
-2. Navigate to project directory - `Web-Dev-Bootcamp`
+    * `git clone https://github.com/hetkansara/N01330009-Final-Assignment.git`
+2. Navigate to project directory - `N01330009-Final-Assignment`
 3. Open project with [`Visual Studio`](https://visualstudio.microsoft.com/downloads/)
 4. Configure your mysql database credentials in `DOCSDB.cs`
     ### DOCSDB ###
